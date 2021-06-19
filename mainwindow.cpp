@@ -6,7 +6,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->teeext->hide();
 }
 
 MainWindow::~MainWindow()
@@ -17,9 +16,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_listWidget_itemClicked(QListWidgetItem *item)
 {
-    if (item->text() == "test1") {
-        ui->teeext->show();
-        ui->teeext->setEnabled(true);
-    }
+    if (item->text() == "test1") ui->stackedWidget->setCurrentIndex(0);
+    else if (item->text() == "test2") ui->stackedWidget->setCurrentIndex(1);
 }
 
