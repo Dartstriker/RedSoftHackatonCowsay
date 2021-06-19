@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QListWidget>
 #include <QStackedWidget>
+//#include <QtUiTools>
 
 #include <map>
 
