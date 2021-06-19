@@ -12,7 +12,3 @@ form01_test::~form01_test()
 {
     delete ui;
 }
-
-
-
-
