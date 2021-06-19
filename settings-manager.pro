@@ -11,11 +11,13 @@ CONFIG += c++11
 SOURCES += \
     form01_test.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    scriptexecuter.cpp
 
 HEADERS += \
     form01_test.h \
-    mainwindow.h
+    mainwindow.h \
+    scriptexecuter.h
 
 FORMS += \
     form01_test.ui \
@@ -30,3 +32,6 @@ CONFIG += embed_translations
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    res.qrc

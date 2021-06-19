@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/bash">
+        <file>bash</file>
+    </qresource>
+</RCC>

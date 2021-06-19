@@ -15,6 +15,9 @@ public:
     form01_test(QWidget *parent = nullptr);
     ~form01_test();
 
+private slots:
+    void on_pushButton_released();
+
 private:
     Ui::Form *ui;
 };
