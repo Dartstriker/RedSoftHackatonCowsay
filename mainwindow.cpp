@@ -1,14 +1,17 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "form01_test.h"
+#include "ui_form01_test.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->setWindowTitle("RedOS Settings Manager");
 
-    //QWidget *firstPageWidget = QUiLoader::
-
+    menuAssocs = generateMenuAssocs();
+    connectWidgets(menuAssocs);
 }
 
 MainWindow::~MainWindow()
@@ -16,8 +19,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::connectWidgets() {
-
+void MainWindow::connectWidgets(const std::map<QString, size_t>& menuAssocs) {
+    form01_test* test = new form01_test();
+    ui->stackedWidget->insertWidget(menuAssocs.at("test2"), test);
 }
 
 std::map<QString, size_t> MainWindow::generateMenuAssocs() {
@@ -32,7 +36,6 @@ std::map<QString, size_t> MainWindow::generateMenuAssocs() {
 
 void MainWindow::on_listWidget_itemClicked(QListWidgetItem *item)
 {
-    static const std::map<QString, size_t> menuAssocs = generateMenuAssocs();
     ui->stackedWidget->setCurrentIndex(menuAssocs.at(item->text()));
 }
 
