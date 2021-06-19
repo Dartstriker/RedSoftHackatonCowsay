@@ -6,6 +6,7 @@
 #include <QStackedWidget>
 
 #include <map>
+#include <vector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,5 +29,6 @@ private:
     Ui::MainWindow *ui;
 
     std::map<QString, size_t> menuAssocs;
+    std::vector<QWidget* > widgetPointers;
 };
 #endif // MAINWINDOW_H

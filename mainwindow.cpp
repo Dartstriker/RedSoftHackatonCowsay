@@ -11,16 +11,21 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowTitle("RedOS Settings Manager");
 
     menuAssocs = generateMenuAssocs();
+    widgetPointers.reserve(menuAssocs.size());
     connectWidgets(menuAssocs);
 }
 
 MainWindow::~MainWindow()
 {
+    for (auto pointer : widgetPointers)
+        delete pointer;
+
     delete ui;
 }
 
 void MainWindow::connectWidgets(const std::map<QString, size_t>& menuAssocs) {
     form01_test* test = new form01_test();
+    widgetPointers.push_back(test);
     ui->stackedWidget->insertWidget(menuAssocs.at("test2"), test);
 }
 
