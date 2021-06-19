@@ -18,7 +18,8 @@ void MainWindow::on_listWidget_itemClicked(QListWidgetItem *item)
 {
     static const std::map<QString, size_t> menuAssocs = {
         {"test1", 0},
-        {"test2", 1}
+        {"test2", 1},
+        {"test3", 2}
     };
 
     ui->stackedWidget->setCurrentIndex(menuAssocs.at(item->text()));

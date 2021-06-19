@@ -51,6 +51,11 @@
          <string>test2</string>
         </property>
        </item>
+       <item>
+        <property name="text">
+         <string>test3</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item>
