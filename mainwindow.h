@@ -5,6 +5,8 @@
 #include <QListWidget>
 #include <QStackedWidget>
 
+#include <map>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE

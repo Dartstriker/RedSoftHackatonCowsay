@@ -16,7 +16,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_listWidget_itemClicked(QListWidgetItem *item)
 {
-    if (item->text() == "test1") ui->stackedWidget->setCurrentIndex(0);
-    else if (item->text() == "test2") ui->stackedWidget->setCurrentIndex(1);
+    static const std::map<QString, size_t> menuAssocs = {
+        {"test1", 0},
+        {"test2", 1}
+    };
+
+    ui->stackedWidget->setCurrentIndex(menuAssocs.at(item->text()));
 }
 
