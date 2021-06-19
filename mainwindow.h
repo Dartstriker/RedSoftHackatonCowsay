@@ -23,6 +23,8 @@ private slots:
     void on_listWidget_itemClicked(QListWidgetItem *item);
 
 private:
+    void connectWidgets();
+    std::map<QString, size_t> generateMenuAssocs();
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
